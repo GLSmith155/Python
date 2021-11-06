@@ -1,1 +1,9 @@
+Formerly hosted at https://explorehealthtoday.com, ThriveLog is a wellness journal meant to encourage and help all people reach their various wellness goals. 
 
+Future Plans:
+1. Social Media implementation:
+    a. Making parts of the site sharable to social media.
+    b. Implementing a new fullstack function that enables users to both see and communicate with one another if they so choose to be publicly visible, though the default 
+    should be private.
+2. Python API of quotes.
+    a. For both this project and future projects I wish there were an api of quotes that allow users to customize what type of quotes they receive. I plan to incorporate as many 
