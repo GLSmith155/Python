@@ -1,9 +1,16 @@
 Formerly hosted at https://explorehealthtoday.com, ThriveLog is a wellness journal meant to encourage and help all people reach their various wellness goals. 
 
+_________________________________________________________________________________________________
 Future Plans:
+
 1. Social Media implementation:
-    a. Making parts of the site sharable to social media.
-    b. Implementing a new fullstack function that enables users to both see and communicate with one another if they so choose to be publicly visible, though the default 
-    should be private.
-2. Python API of quotes.
+    a. Making parts of the site sharable to popular social media. Might be as simple as just being able to quick share that they are 'active on thrivelog.'
+    b. Implementing a new fullstack function that enables users to both see and communicate with one another if they so choose to be publicly visible, but the default 
+    should be private. In fact if I go a more 'forum' route with this task then it would be fairly easy. I want to research this more before committing to it, as it
+    should be actually userful and/or motivating rather than just simply functional.
+    
+2. Python API of quotes.   Deadline for complete functionality: 12/27/2021
     a. For both this project and future projects I wish there were an api of quotes that allow users to customize what type of quotes they receive. I plan to incorporate as many 
+    philosophies, religions, and inspiring individuals as possible to the point where just about anyone could find something motivating for them. We all want to do better, but 
+    I believe there is no better way to motivate people than to reach them within their own paradigms and meet them where they're at. Nevertheless this project will be more
+    time consuming than anything, and as such I will give myself a long deadline.
