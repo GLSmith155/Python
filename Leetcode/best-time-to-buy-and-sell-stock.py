@@ -1,5 +1,4 @@
   # My single for-loop solution for https://leetcode.com/problems/best-time-to-buy-and-sell-stock/submissions/
-  # Faster than 97% of other solutions.
     class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         
