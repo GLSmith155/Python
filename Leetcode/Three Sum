@@ -1,4 +1,4 @@
-# Naive Three Sum solution with a time complexoty of O(n^3)
+# Naive Three Sum solution with a time complexity of O(n^3)
 
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
