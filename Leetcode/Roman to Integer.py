@@ -7,8 +7,8 @@ class Solution:
         answer = 0        
         roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50,'C': 100, 'D': 500, 'M': 1000}
 
-# s is the string, we are iterating through each letter in the Roman Numeral via s and s[1:] represented by a and b.
-# We grab the value from our "roman" dictionary using our parallel zip iteration of a and b where a is s and b is the next value s[1:]. 
+# "s" is the Roman Numeral string, we are iterating through each letter via s and s[1:] represented by a and b accordingly.
+# "a" being the current numeral, and "b" being the next numeral.
         for a, b in zip(s, s[1:]):
             
             if roman[a] < roman[b]:
