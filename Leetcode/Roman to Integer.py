@@ -1,3 +1,4 @@
+# Given a roman numeral, convert it to an integer.
 #Time: O(n)
 #Space: O(128) = O(1)
 class Solution:
@@ -19,7 +20,7 @@ class Solution:
 
 
 
-# Time complexity of O(1).
+# Time complexity of O(1), but slower due to using more if-else statements than the above.
 
 class Solution:
     def romanToInt(self, s: str) -> int:
