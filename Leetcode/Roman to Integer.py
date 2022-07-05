@@ -3,19 +3,25 @@
 #Space: O(128) = O(1)
 class Solution:
     def romanToInt(self, s: str) -> int:
-        ans = 0
-        roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        
+        answer = 0        
+        roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50,'C': 100, 'D': 500, 'M': 1000}
 
+# s is the string, we are iterating through each letter in the Roman Numeral via s and s[1:] represented by a and b.
+# We grab the value from our "roman" dictionary using our parallel zip iteration of a and b where a is s and b is the next value s[1:]. 
         for a, b in zip(s, s[1:]):
+            
             if roman[a] < roman[b]:
-                ans -= roman[a]
+                answer -= roman[a]
             else:
-                ans += roman[a]
+                answer += roman[a]
 
-        return ans + roman[s[-1]]
+        return answer + roman[s[-1]]
+
+# Example: VIII of the above zip for-loop.  a is V, I, I   while b is I, I, I. answer = 8.
 
 
-
+#*********************************************************************************************
 
 
 
