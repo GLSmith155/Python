@@ -16,7 +16,7 @@ class Node:
         self.value = value
         self.next = None
 
-# We will use this class as a contructor for all linked lists we may create.
+# Contructor for linked lists.
 class LinkedList:
     # Creates a new Node. 
     def __init__(self, value):
