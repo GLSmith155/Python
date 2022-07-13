@@ -76,7 +76,7 @@ class LinkedList:
         self.length -= 1 
         if self.length == 0:        # If we only had one value to begin with this value will now reach 0, so just set the tail to None as head is already None.
             self.tail = None
-        return temp.value
+        return temp
         
     # Prepend method to append a node to the beginning of the list.
     def prepend(self, value):
@@ -90,13 +90,20 @@ class LinkedList:
         self.length += 1
         return True   # We will create a method later that will need this method to return True.
     
-    
+    # Get a value given an index. Linked List indices start at 0 much like lists, so inputting get(2) returns the 3rd value.
+    def get(self, index):
+        if index < 0 or index >= self.length: # We cannnot get an index below 0 or above our LL's length, so return None.
+            return None
+        temp = self.head     # This will be the temporary value that we start at the head, and then iterate through an amount = to the given index.
+        for _ in range(index): # You are only suppose to put a variable in a for-loop if it's going to be used - otherwise _ is standard.
+            temp = temp
+        return temp
+        
 # The below my_ll variable first calls the LinkedList class and passes it the value 4. The LL is initialized, then the Node class creates a node of value 4.
 # The next lines of code in LinkedList define head, tail, and length. LinkedList(4) creates a linked list with a single node of value 4.
 my_ll = LinkedList(4)
 print("This is the LinkedList(4) head: ", my_ll.head.value) # Output is 4
 print("This is the LinkedList(4) length: ", my_ll.length)   # Output is 1
-
 
  
  # Lets call the above append method and then print out the tail and length
@@ -117,4 +124,6 @@ my_ll.prepend(1)
 print("\nThis is the after prepend 1 head: ", my_ll.head.value)  # Output is 1
 print("This is the after prepend 1 length: ", my_ll.length)    # Output is 3   
 
-print("\nThis is the return value after pop_first is used: ", my_ll.pop_first())  # Output is 1, and 1 is no longer in the ll.
+print("\nThis is the return value after pop_first is used: ", my_ll.pop_first())  # Output is 1, and 1 is no longer in the ll. 4 is now the head.
+
+print("\nThis is the return value of get(1): ", my_ll.get(0))# Successfully outputs 4 when .value is added to temp, but we are to remove that for a later method.
