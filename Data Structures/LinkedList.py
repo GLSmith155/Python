@@ -98,7 +98,21 @@ class LinkedList:
         for _ in range(index): # You are only suppose to put a variable in a for-loop if it's going to be used - otherwise _ is standard.
             temp = temp
         return temp
+    
+    # Given an index and a value, we will change the value at the given index to the new value given.    
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False  # If the if statement doesn't run we'll return False otherwise return True.
         
+    # At a given index we are going to insert a new node.
+    def insert(self, index, value):
+        if index < 0 or index > self.length: # We cannnot insert an index below index 0 or above our LL's length + 1, so return None.
+            return False
+        for _ in range(index):
+            
 # The below my_ll variable first calls the LinkedList class and passes it the value 4. The LL is initialized, then the Node class creates a node of value 4.
 # The next lines of code in LinkedList define head, tail, and length. LinkedList(4) creates a linked list with a single node of value 4.
 my_ll = LinkedList(4)
@@ -126,4 +140,6 @@ print("This is the after prepend 1 length: ", my_ll.length)    # Output is 3
 
 print("\nThis is the return value after pop_first is used: ", my_ll.pop_first())  # Output is 1, and 1 is no longer in the ll. 4 is now the head.
 
-print("\nThis is the return value of get(1): ", my_ll.get(0))# Successfully outputs 4 when .value is added to temp, but we are to remove that for a later method.
+print("\nThis is the head of the 1st index before set_value(1,9) happens: ", my_ll.head.value) # Outputs 4.
+my_ll.set_value(1,9)
+print("\nThis is the return value of get(1) after set_value(1,9) happens: ", my_ll.head.value)  # Outputs 9 as 4 has been changed via set_value.
