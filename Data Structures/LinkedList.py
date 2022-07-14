@@ -122,7 +122,7 @@ class LinkedList:
         self.length += 1
         return True
     
-    def remove(self, index):
+    def remove(self, index):  # Removes the node at the given index.
         if index < 0 or index >= self.length:
             return None             # If we remove unsuccessuflly then return None. If successful return the node.
         if index == 0:  # If first method needs to be removed call pop_first method.
@@ -136,8 +136,18 @@ class LinkedList:
         self.length -= 1 
         return temp
         
-        
-        
+    def reverse(self):  # Reverses the linked list. "Common interview question.""
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+        after = temp.next
+        before = None
+        for _ in range(self.length):
+            after = temp.next
+            temp.next = before
+            before = temp
+            temp = after
+            
         
 # The below my_ll variable first calls the LinkedList class and passes it the value 4. The LL is initialized, then the Node class creates a node of value 4.
 # The next lines of code in LinkedList define head, tail, and length. LinkedList(4) creates a linked list with a single node of value 4.
@@ -177,3 +187,7 @@ print("This is the length after insert(0, 5): ", my_ll.length)    # Output is no
 my_ll.remove(0)
 print("\nThis is the head after remove(0): ", my_ll.head.value)  # Output is now 9.
 print("This is the length after remove(0): ", my_ll.length)    # Output is now 2.
+
+my_ll.reverse()
+print("\nThis is the head after reverse(): ", my_ll.head.value)  # Output is now 2.
+print("This is the tail after reverse(): ", my_ll.tail.value)  # Output is now 9.
