@@ -111,8 +111,34 @@ class LinkedList:
     def insert(self, index, value):
         if index < 0 or index > self.length: # We cannnot insert an index below index 0 or above our LL's length + 1, so return None.
             return False
-        for _ in range(index):
-            
+        if index == 0:                   # If inserting at beginning just call prepend method.
+            return self.prepend(value)
+        if index == self.length:         # If inserting at end just call append method.
+            return self.append(value)
+        new_node = Node(value)         # If inserting inside create a new Node.
+        temp = self.get(index - 1)     # Then set a temp variable to the node right before the index given.
+        new_node.next = temp.next    # Set our new node's next node to be the next node after temp node. Both temp and new temporarily point to the same node.
+        temp.next = new_node       # Set temp node's next node to the one we're inserting.
+        self.length += 1
+        return True
+    
+    def remove(self, index):
+        if index < 0 or index >= self.length:
+            return None             # If we remove unsuccessuflly then return None. If successful return the node.
+        if index == 0:  # If first method needs to be removed call pop_first method.
+            return self.pop_first()
+        if index == self.length - 1:
+            return self.pop()
+        prev = self.get(index - 1)
+        temp = prev.next
+        prev.next = temp.next
+        temp.next = None
+        self.length -= 1 
+        return temp
+        
+        
+        
+        
 # The below my_ll variable first calls the LinkedList class and passes it the value 4. The LL is initialized, then the Node class creates a node of value 4.
 # The next lines of code in LinkedList define head, tail, and length. LinkedList(4) creates a linked list with a single node of value 4.
 my_ll = LinkedList(4)
@@ -143,3 +169,11 @@ print("\nThis is the return value after pop_first is used: ", my_ll.pop_first())
 print("\nThis is the head of the 1st index before set_value(1,9) happens: ", my_ll.head.value) # Outputs 4.
 my_ll.set_value(1,9)
 print("\nThis is the return value of get(1) after set_value(1,9) happens: ", my_ll.head.value)  # Outputs 9 as 4 has been changed via set_value.
+
+my_ll.insert(0, 5)
+print("\nThis is the head after insert(0, 5): ", my_ll.head.value)  # Output is now 5.
+print("This is the length after insert(0, 5): ", my_ll.length)    # Output is now 3.
+
+my_ll.remove(0)
+print("\nThis is the head after remove(0): ", my_ll.head.value)  # Output is now 9.
+print("This is the length after remove(0): ", my_ll.length)    # Output is now 2.
